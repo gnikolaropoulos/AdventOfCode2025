@@ -1,0 +1,41 @@
+[project]
+name = "adventofcode2025"
+version = "1.0.0"
+description = "Advent of Code 2025 Python solutions"
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0.0",      # Code formatting
+    "ruff>=0.1.0",        # Fast linter and formatter
+    "mypy>=1.8.0",        # Type checking
+]
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+check_untyped_defs = true
+disallow_untyped_defs = false  # Set to true if you want strict type checking
